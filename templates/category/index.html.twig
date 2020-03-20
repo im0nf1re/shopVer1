@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/style/category.css">
+{% endblock %}
+{% block main %}
+    <h2 class="category-title">{{ category.getName }}:</h2>
+    {% for productItem in products %}
+        <a class="product-item" href="{{path('product', {prod: productItem.getEngName})}}">
+            <img src="{{ productItem.getImagePath }}" alt="" class="product-item-img">
+            <p class="product-item-title">{{ productItem.getName }}</p>
+            <p class="product-item-price">{{ productItem.getPrice }} р.</p>
+        </a>
+
+    {% endfor %}
+{% endblock %}

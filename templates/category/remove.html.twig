@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="style/form.css">
+{% endblock %}
+
+{% block main %}
+    <p class="form-title">{{message}}</p>
+
+    <form action="" method="post">
+        <label for="name">Название категории</label>
+        <input type="text" name="name" placeholder="Телефоны">
+
+        <input type="submit" name="btn" value="Удалить">
+    </form>
+{% endblock %}

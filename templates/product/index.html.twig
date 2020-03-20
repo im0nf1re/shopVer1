@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/style/product.css">
+{% endblock %}
+{% block main %}
+    <img class="img" src="{{ product.getImagePath }}" alt="Картинка">
+    <div class="content">
+        <h2 class="title">{{ product.getName }}</h2>
+        <p class="price"><b>Цена:</b> {{ product.getPrice }} р.</p>
+        <p class="description"><b>Описание:</b> {{ product.getDescription }}</p>
+        <p class="category"><b>Категория:</b> <a href="{{ path('category', {category:product.getCategory.getEngName}) }}">{{ product.getCategory.getName }}</a></p>
+        <div class="clearfix"></div>
+    </div>
+
+{% endblock %}

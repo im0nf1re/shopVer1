@@ -1,0 +1,36 @@
+.category-title {
+    margin-bottom: 20px;
+    margin-left: 25px;
+}
+
+.product-item {
+    display: block;
+    width: 100%;
+    border: 2px solid lightgrey;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    height: 120px;
+}
+
+.product-item:hover {
+    background-color: lightgrey;
+}
+
+.product-item-img {
+    width: 60px;
+    height: 120px;
+    float: left;
+}
+
+.product-item-title {
+    font-size: 30px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+.product-item-price {
+    font-size: 25px;
+    margin-left: 100px;
+}

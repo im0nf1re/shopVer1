@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Магазин</title>
+        <link rel="stylesheet" href="{{ asset('style/base.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div class="wrapper header">
+                <header>
+                    <h1><a href="{{ path('main') }}">Интернет магазин</a></h1>
+                    <div class="menu">
+                        <div class="choose-category menu-item" id="chooseCategory">
+                            Категории
+                            <div class="drop-down-list" id="categoryList">
+                                {% for categoryItem in categories %}
+                                    <a class="drop-down-list-item" href="{{ path('category', {category: categoryItem.getEngName}) }}">{{ categoryItem.getName }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="menu-item" href="{{ path('add_category') }}">
+                            Управление категориями
+                            <div class="drop-down-list">
+                                <a class="drop-down-list-item" href="{{ path('add_category') }}">Добавить</a>
+                                <a class="drop-down-list-item" href="{{ path('remove_category') }}">Удалить</a>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            Управление продуктами
+                            <div class="drop-down-list">
+                                <a href="{{ path('add_product') }}" class="drop-down-list-item">Добавить</a>
+                                <a href="{{ path('remove_product') }}" class="drop-down-list-item">Удалить</a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <div class="wrapper">
+                <main>
+                    {% block main %}{% endblock %}
+                </main>
+            </div>
+
+            <div class="wrapper footer">
+                <footer>
+                    <div class="copyright">
+                        <p>(C)BestShopEver</p>
+                    </div>
+                    <div class="contact">
+                        <p>
+                            Contact us: <br>
+                            phone: 88005553535 <br>
+                            email: sobaka@mail.ru
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+        <script src="{{ asset('script/base.js') }}"></script>
+    </body>
+</html>
